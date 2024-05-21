@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+header{
+background-color: black;
+padding: 20px;
+color: white;
+}
+
+.Ocentro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul li{
+display: inline;
+margin-right: 70px;
+text-decoration: none;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+main{
+    text-align: center;
+    margin-top: 80px;
+
+}
+
+.FormaCadastro{
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    
+}
