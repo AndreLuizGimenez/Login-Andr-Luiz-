@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
 </head>
+
 <body>
     <header>
         <nav class="Ocentro">
-        <ul>
-            <li> <a href="index.html">Cadastro </a> </li>
-            <li> <a href="Acesso.html">Acesso</a> </li>
-        </ul>
-    </nav>
+            <ul>
+                <li> <a href="index.html">Cadastro </a> </li>
+                <li> <a href="Acesso.html">Acesso</a> </li>
+            </ul>
+        </nav>
     </header>
 
 
-    <main>
-        <form action="Cadastro">
+    <main class="FormularioCss">
+        <form class="CadastroFormClass" action="Cadastro">
             <h1>Cadastro</h1>
-        <label for="UserName">Nome</label> <br>
-        <input type="text" class="FormaCadastro" name="UserName" id="UserName" required> <br>
+            <label for="UserName">Nome</label> <br>
+            <input type="text" class="Username CadastroCss" name="UserName" id="UserName" required> <br>
 
-        <label for="EmailClass">Email</label> <br>
-        <input type="email" class="FormaCadastro" name="EmailClass" id="EmailClass" required> <br>
+            <label for="EmailClass">Email</label> <br>
+            <input type="email" class="EmailClass CadastroCss" name="EmailClass" id="EmailClass" required> <br>
 
-        <label for="Cpf/Cnpj">Cpf ou Cnpj</label> <br>
-        <input type="number" class="FormaCadastro" name="Cpf/Cnpj" id="Cpf/Cnpj" required> <br> <br>
+            <label for="Cpf/Cnpj">Cpf ou Cnpj</label> <br>
+            <input type="number" class="Cpf/Cnpj CadastroCss" name="Cpf/Cnpj" id="Cpf/Cnpj" required> <br> <br>
 
-        <label for="Senha">Sua Senha</label> <br>
-        <input type="password" class="SenhaCadastro" name="Senha" id="Senha" required> <br>
+            <label for="Senha">Sua Senha</label> <br>
+            <input type="password" class="Senha CadastroCss" name="Senha" id="Senha" required> <br>
 
-        <label for="ConfirmaSenha">Confirme Sua Senha</label> <br>
-        <input type="password" class="SenhaCadastro" name="ConfirmaSenha" id="ConfirmaSenha" required> <br>
+            <label for="ConfirmaSenha">Confirme Sua Senha</label> <br>
+            <input type="password" class="ConfirmaSenha CadastroCss" name="ConfirmaSenha" id="ConfirmaSenha" required>
+            <br> <br>
 
 
-        <input type="submit" value="Confirmar">
+            <input type="submit" value="CONFIRMAR" class="CssConfirmar">
 
-    </form>
+        </form>
     </main>
 </body>
+
 </html>
