@@ -2,9 +2,10 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesso</title>
+    <title>Cadastro</title>
 </head>
 
 <body>
@@ -17,13 +18,99 @@
         </nav>
     </header>
 
+
     <main class="FormularioCss">
-        <form action="Cadastro">
-            <h1>Acesso</h1>
-            <input type="text" class="CadastroCss" placeholder="Forma Que Cadastrou"> <br>
-            <input type="password" class="CadastroCss" placeholder="Sua Senha">
+        <form class="CadastroFormClassAcesso" action="Cadastro">
+            <div class="CadastroFormClassDiv1Acesso">
+                <h1>Acesso</h1>
+            </div>
+            <br>
+
+            <div class="logins" id="logins">
+                <p>Escolha o tipo de login</p> <br>
+                <span id="login-email" onclick="criarInput('email')">E-mail</span>
+                <span id="login-username" onclick="criarInput('username')">Username</span>
+                <span id="login-cpf" onclick="criarInput('cpf')">CPF</span>
+                <span id="login-cpf" onclick="criarInput('cnpj')">CNPJ</span> <br>
+            </div>
+
+            <div class="tipos-login" id="tipos-login">
+                <input type="email" id="email" class="CadastroCss" placeholder="Email" required>
+            </div>
+
+
+
+            <input type="password" class="Senha CadastroCss" name="Senha" id="Senha" required placeholder="Senha"> <br>
+            <br>
+
+
+
+            <input type="submit" value="Entrar" class="CssConfirmar" style="cursor:pointer;">
+
         </form>
     </main>
+
+    <script>
+        function criarInput(type) {
+            const tiposLoginDiv = document.getElementById('tipos-login');
+
+            while (tiposLoginDiv.firstChild) {
+                tiposLoginDiv.removeChild(tiposLoginDiv.firstChild);
+            }
+
+            let input;
+            if (type === 'email') {
+                input = document.createElement('input');
+                input.type = 'email';
+                input.placeholder = 'Email';
+                input.required = true;
+                input.className = 'CadastroCss';
+            } else if (type === 'username') {
+                input = document.createElement('input');
+                input.type = 'text';
+                input.placeholder = 'Username';
+                input.required = true;
+                input.className = 'CadastroCss';
+            } else if (type === 'cpf') {
+                input = document.createElement('input');
+                input.type = 'text';
+                input.placeholder = 'CPF';
+                input.maxLength = 14;
+                input.required = true;
+                input.className = 'CadastroCss';
+                input.onkeyup = function () { formatCPF(this); };
+            } else if (type === 'cnpj') {
+                input = document.createElement('input');
+                input.type = 'text';
+                input.placeholder = 'CNPJ';
+                input.maxLength = 18;
+                input.required = true;
+                input.className = 'CadastroCss';
+                input.onkeyup = function () { formatCNPJ(this); };
+            }
+
+            tiposLoginDiv.appendChild(input);
+        }
+
+        function formatCPF(cpf) {
+            var value = cpf.value;
+            value = value.replace(/\D/g, "");
+            value = value.replace(/(\d{3})(\d)/, "$1.$2");
+            value = value.replace(/(\d{3})(\d)/, "$1.$2");
+            value = value.replace(/(\d{3})(\d{2})$/, "$1-$2");
+            cpf.value = value;
+        }
+
+        function formatCNPJ(cnpj) {
+            var value = cnpj.value;
+            value = value.replace(/\D/g, "");
+            value = value.replace(/^(\d{2})(\d)/, "$1.$2");
+            value = value.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+            value = value.replace(/\.(\d{3})(\d)/, ".$1/$2");
+            value = value.replace(/(\d{4})(\d)/, "$1-$2");
+            cnpj.value = value;
+        }
+    </script>
 </body>
 
 </html>
